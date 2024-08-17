@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     sourceCode.addEventListener('click', () => {
-        window.open('https://t.me/praveenkumar_26', '_blank');
+        window.open('https://t.me/Hamster_support_chat_bot', '_blank');
     });
 
     telegramChannel.addEventListener('click', () => {
