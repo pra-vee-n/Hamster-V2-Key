@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     telegramChannel.addEventListener('click', () => {
-        window.open('https://telegram.me/good_morning_wish', '_blank');
+        window.open('https://t.me/Buisness_idea_BuisnessIdea', '_blank');
     });
 
     const generateKey = async (clientToken, promoId) => {
