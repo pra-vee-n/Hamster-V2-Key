@@ -257,6 +257,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return data.hasCode;
     };
 
+
     sourceCode.addEventListener('click', () => {
         window.open('https://t.me/Hamster_support_chat_bot', '_blank');
     });
@@ -264,7 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
     telegramChannel.addEventListener('click', () => {
         window.open('https://t.me/Buisness_idea_BuisnessIdea', '_blank');
     });
-
+    
     const generateKey = async (clientToken, promoId) => {
         const response = await fetch('https://api.gamepromo.io/promo/create-code', {
             method: 'POST',
