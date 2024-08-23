@@ -146,18 +146,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 return null;
             }
 
-            for (let i = 0; i < 11; i++) {
-                await sleep(EVENTS_DELAY * delayRandom());
+            for (let i = 0; i < game.attempts; i++) {
                 const hasCode = await emulateProgress(clientToken, game.promoId);
-                updateProgress(7 / keyCount, 'Emulating progress...');
+                updateProgress((100 / game.attempts) / keyCount, `Emulating progress ${i + 1}/${game.attempts}...`);
                 if (hasCode) {
                     break;
                 }
+                await sleep(game.timing);  // Sleep after each attempt to wait before the next event registration
             }
 
             try {
                 const key = await generateKey(clientToken, game.promoId);
-                updateProgress(30 / keyCount, 'Generating key...');
+                updateProgress(100 / keyCount, 'Generating key...');
                 return key;
             } catch (error) {
                 alert(`Failed to generate key: ${error.message}`);
@@ -185,19 +185,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         keyContainer.classList.remove('hidden');
         generatedKeysTitle.classList.remove('hidden');
-        
+
         document.querySelectorAll('.copyKeyBtn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const key = event.target.getAttribute('data-key');
                 copyToClipboard(key);
             });
         });
-        
+
         copyAllBtn.addEventListener('click', () => {
             const keysText = keys.filter(key => key).join('\n');
             copyToClipboard(keysText);
         });
-            
+
         progressBar.style.width = '100%';
         progressText.innerText = '100%';
         progressLog.innerText = 'Complete';
@@ -206,14 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
         keyCountGroup.classList.remove('hidden');
         document.querySelector('.grid-container').style.display = 'grid';
         startBtn.disabled = false;
-    });
-
-    sourceCode.addEventListener('click', () => {
-        window.open('https://t.me/Hamster_support_chat_bot', '_blank');
-    });
-
-    telegramChannel.addEventListener('click', () => {
-        window.open('https://telegram.me/good_morning_wish', '_blank');
     });
 
     const generateClientId = () => {
@@ -264,6 +256,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = await response.json();
         return data.hasCode;
     };
+
+    sourceCode.addEventListener('click', () => {
+        window.open('https://t.me/Hamster_support_chat_bot', '_blank');
+    });
+    
+    telegramChannel.addEventListener('click', () => {
+        window.open('https://telegram.me/good_morning_wish', '_blank');
+    });
 
     const generateKey = async (clientToken, promoId) => {
         const response = await fetch('https://api.gamepromo.io/promo/create-code', {
