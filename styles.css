@@ -6,8 +6,34 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    
     margin: 0;
+}
+
+/* Add a max height and enable scrolling for the game options */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    max-height: 300px; /* Adjust this height based on your layout needs */
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.game-option {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+/* Ensure the selected game stands out */
+.game-option.selected {
+    transform: scale(1.05);
+    border-color: #007bff;
+    background-color: #f0f8ff; /* Optional: Slight background color change */
 }
 
 .container {
@@ -26,21 +52,6 @@ h1 {
     color: #007bff;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.game-option {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s, border-color 0.3s;
-}
 
 .game-option img {
     width: 100%;
@@ -60,13 +71,14 @@ h1 {
 
 .form-group {
     margin-bottom: 20px;
-    
+    text-align: left;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
 }
 
 .key-slider {
@@ -105,7 +117,6 @@ label {
     font-weight: bold;
     color: #007bff;
 }
-
 
 button {
     background-color: #007bff;
@@ -187,9 +198,6 @@ button:hover {
 #copyStatus {
     margin-top: 15px;
     color: green;
-}
-#telegramChannel{
-    background-color: green;
 }
 /* Style for the overlay (full-screen) */
 .overlay {
