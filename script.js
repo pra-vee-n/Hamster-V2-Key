@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const games = {
         1: {
-            name: 'Zoopolis',
-            appToken: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
-            promoId: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
-            timing: 20000, // 20 seconds
-            attempts: 20,
+            name: 'Riding Extreme 3D',
+            appToken: 'd28721be-fd2d-4b45-869e-9f253b554e50',
+            promoId: '43e35910-c168-4634-ad4f-52fd764a843f',
+            timing: 30000, // 30 seconds
+            attempts: 25,
         },
         2: {
             name: 'Chain Cube 2048',
@@ -32,11 +32,11 @@ document.addEventListener('DOMContentLoaded', () => {
             attempts: 20,
         },
         3: {
-            name: 'Cafe Dash',
-            appToken: 'bc0971b8-04df-4e72-8a3e-ec4dc663cd11',
-            promoId: 'bc0971b8-04df-4e72-8a3e-ec4dc663cd11',
-            timing: 20000, // 20 seconds
-            attempts: 20,
+            name: 'My Clone Army',
+            appToken: '74ee0b5b-775e-4bee-974f-63e7f4d5bacb',
+            promoId: 'fe693b26-b342-4159-8808-15e3ff7f8767',
+            timing: 180000, // 180 seconds
+            attempts: 30,
         },
         4: {
             name: 'Train Miner',
@@ -74,11 +74,32 @@ document.addEventListener('DOMContentLoaded', () => {
             attempts: 20,
         },
         9: {
+            name: 'Mud Racing',
+            appToken: '8814a785-97fb-4177-9193-ca4180ff9da8',
+            promoId: '8814a785-97fb-4177-9193-ca4180ff9da8',
+            timing: 20000, // 20 seconds
+            attempts: 20,
+        },
+        10: {
+            name: 'Cafe Dash',
+            appToken: 'bc0971b8-04df-4e72-8a3e-ec4dc663cd11',
+            promoId: 'bc0971b8-04df-4e72-8a3e-ec4dc663cd11',
+            timing: 20000, // 20 seconds
+            attempts: 20,
+        },
+        11: {
+            name: 'Zoopolis',
+            appToken: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
+            promoId: 'b2436c89-e0aa-4aed-8046-9b0515e1c46b',
+            timing: 20000, // 20 seconds
+            attempts: 20,
+        },
+        12: {
             name: 'Gangs Wars',
             appToken: 'b6de60a0-e030-48bb-a551-548372493523',
             promoId: 'c7821fa7-6632-482c-9635-2bd5798585f9',
-            timing: 30000, // 20 seconds
-            attempts: 20,
+            timing: 40000, // 40 seconds
+            attempts: 30,
         }
     };
 
@@ -99,6 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyStatus = document.getElementById('copyStatus');
     const generateMoreBtn = document.getElementById('generateMoreBtn');
     const sourceCode = document.getElementById('sourceCode');
+
 
     let selectedGame = null;
 
